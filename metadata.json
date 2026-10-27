@@ -1,0 +1,6 @@
+{
+  "name": "University Admission Notice Extractor & Google Sheets Sync",
+  "description": "Extract university admission dates, exam schedules, and unit fees from circulars, websites, or images, and sync directly to Google Sheets.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
