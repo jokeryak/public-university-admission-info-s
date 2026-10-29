@@ -21,7 +21,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     portalUrl: 'https://admission.eis.du.ac.bd',
     noticeUrl: 'https://admission.eis.du.ac.bd/index.php?act=information/get_notices',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'কলা, বিজ্ঞান, ব্যবসায় শিক্ষা, চারুকলা ও আইবিএ ইউনিট',
   },
   {
@@ -31,7 +31,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'General',
     portalUrl: 'https://admission.ru.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'এ, বি ও সি ইউনিট ভর্তি পরীক্ষা',
   },
   {
@@ -41,7 +41,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'General',
     portalUrl: 'https://admission.cu.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'এ, বি, সি, ডি এবং উপ-ইউনিটসমূহ',
   },
   {
@@ -51,7 +51,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'General',
     portalUrl: 'https://juniv-admission.org',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'এ, বি, সি, ডি, ই ইউনিট এবং আইবিএ-জেইউ',
   },
   {
@@ -61,7 +61,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'General',
     portalUrl: 'https://jnu.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'বিজ্ঞান, মানবিক ও ব্যবসায় শিক্ষা অনুষদ',
   },
   {
@@ -71,7 +71,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'General',
     portalUrl: 'https://ku.ac.bd/admission',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'এ, বি, সি ও ডি স্কুল অব স্টাডিজ',
   },
   {
@@ -81,7 +81,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'General',
     portalUrl: 'https://iu.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'ধর্মতত্ত্ব, বিজ্ঞান, কলা ও আইন অনুষদ',
   },
   {
@@ -91,7 +91,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'General',
     portalUrl: 'https://cou.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'এ, বি ও সি ইউনিট',
   },
   {
@@ -101,7 +101,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'General',
     portalUrl: 'https://jkkniu.edu.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'কলা, বিজ্ঞান, ব্যবসায় প্রশাসন ও চারুকলা',
   },
   {
@@ -111,7 +111,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'General',
     portalUrl: 'https://brur.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'এ, বি, সি ও ডি ইউনিট',
   },
   {
@@ -121,7 +121,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'General',
     portalUrl: 'https://bu.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'ক, খ ও গ ইউনিট',
   },
   {
@@ -131,7 +131,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'General',
     portalUrl: 'https://rub.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'শাহজাদপুর, সিরাজগঞ্জ',
   },
   {
@@ -141,7 +141,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'General',
     portalUrl: 'https://shu.edu.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'কলা ও বিজ্ঞান অনুষদ',
   },
   {
@@ -151,7 +151,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'General',
     portalUrl: 'https://bsmru.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'কিশোরগঞ্জ সাধারণ পাবলিক বিশ্ববিদ্যালয়',
   },
 
@@ -163,7 +163,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Engineering',
     portalUrl: 'https://www.buet.ac.bd/admission',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'প্রকৌশল ও স্থাপত্য বিভাগ (ক ও খ গ্রুপ)',
   },
   {
@@ -173,7 +173,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Cluster',
     portalUrl: 'https://admissionckruet.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'চুয়েট, কুয়েট ও রুয়েটের সমন্বিত প্রকৌশল পরীক্ষা',
   },
   {
@@ -183,7 +183,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Engineering',
     portalUrl: 'https://www.cuet.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'সিএসই, ইইই, সিভিল, মেকানিক্যাল ইত্যাদি',
   },
   {
@@ -193,7 +193,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Engineering',
     portalUrl: 'https://www.kuet.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'প্রকৌশল ও প্রযুক্তি অনুষদ',
   },
   {
@@ -203,7 +203,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Engineering',
     portalUrl: 'https://www.ruet.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'প্রকৌশল বিভাগসমূহ',
   },
   {
@@ -213,7 +213,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Engineering',
     portalUrl: 'https://duet.ac.bd/admission',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'ডিপ্লোমা প্রকৌশলীদের জন্য বিএসসি ইঞ্জিনিয়ারিং',
   },
   {
@@ -223,7 +223,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Engineering',
     portalUrl: 'https://butex.edu.bd/admission',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'টেক্সটাইল ইঞ্জিনিয়ারিং অনুষদ',
   },
   {
@@ -233,7 +233,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Engineering',
     portalUrl: 'https://bdu.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'কালিয়াকৈর, গাজীপুর - আইসিটি ও এডুকেশনাল টেকনোলজি',
   },
   {
@@ -243,7 +243,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Engineering',
     portalUrl: 'https://bsmraau.edu.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'লালমনিরহাট / ঢাকা - অ্যারোনটিক্যাল ইঞ্জিনিয়ারিং ও অ্যাভিয়েশন',
   },
   {
@@ -253,7 +253,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Engineering',
     portalUrl: 'https://bsmrmu.edu.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'নেভাল আর্কিটেকচার, ওশানোগ্রাফি ও মেরিটাইম গভর্ন্যান্স',
   },
 
@@ -265,7 +265,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Cluster',
     portalUrl: 'https://gstadmission.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: '২৪টি সাধারণ ও বিজ্ঞান-প্রযুক্তি বিশ্ববিদ্যালয়ের সমন্বিত পরীক্ষা (A, B, C)',
   },
   {
@@ -275,7 +275,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Science & Tech',
     portalUrl: 'https://admission.sust.edu',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'সিলেট - বিজ্ঞান, প্রকৌশল ও সামাজিক বিজ্ঞান',
   },
   {
@@ -285,7 +285,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Science & Tech',
     portalUrl: 'https://hstu.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'দিনাজপুর - বিজ্ঞান, কৃষি ও প্রকৌশল',
   },
   {
@@ -295,7 +295,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Science & Tech',
     portalUrl: 'https://mbstu.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'সন্তোষ, টাঙ্গাইল',
   },
   {
@@ -305,7 +305,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Science & Tech',
     portalUrl: 'https://pstu.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'দুমকি, পটুয়াখালী',
   },
   {
@@ -315,7 +315,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Science & Tech',
     portalUrl: 'https://nstu.edu.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'সোনাপুর, নোয়াখালী',
   },
   {
@@ -325,7 +325,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Science & Tech',
     portalUrl: 'https://just.edu.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'যশোর - বিজ্ঞান, স্বাস্থ্যবিজ্ঞান ও প্রকৌশল',
   },
   {
@@ -335,7 +335,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Science & Tech',
     portalUrl: 'https://pust.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'রাজাপুর, পাবনা',
   },
   {
@@ -345,7 +345,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Science & Tech',
     portalUrl: 'https://bsmrstu.edu.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'গোপালগঞ্জ সদর',
   },
   {
@@ -355,7 +355,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Science & Tech',
     portalUrl: 'https://rmstu.edu.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'রাঙ্গামাটি পার্বত্য জেলা',
   },
   {
@@ -365,7 +365,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Science & Tech',
     portalUrl: 'https://cstu.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'চাঁদপুর',
   },
   {
@@ -375,7 +375,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Science & Tech',
     portalUrl: 'https://bsfmstu.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'মেলান্দহ, জামালপুর',
   },
   {
@@ -385,7 +385,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Science & Tech',
     portalUrl: 'https://sstu.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'শান্তিগঞ্জ, সুনামগঞ্জ',
   },
   {
@@ -395,7 +395,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Science & Tech',
     portalUrl: 'https://bstu.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'বগুড়া',
   },
 
@@ -407,7 +407,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Cluster',
     portalUrl: 'https://acas.edu.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: '৯টি কৃষি ও কৃষিভিত্তিক বিশ্ববিদ্যালয়ের সমন্বিত পরীক্ষা',
   },
   {
@@ -417,7 +417,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Agricultural',
     portalUrl: 'https://bau.edu.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'ময়মনসিংহ - কৃষি, ভেটেরিনারি ও ফিশারিজ',
   },
   {
@@ -427,7 +427,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Agricultural',
     portalUrl: 'https://bsmrau.edu.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'সালনা, গাজীপুর',
   },
   {
@@ -437,7 +437,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Agricultural',
     portalUrl: 'https://sau.edu.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'শেরেবাংলা নগর, ঢাকা',
   },
   {
@@ -447,7 +447,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Agricultural',
     portalUrl: 'https://sau.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'টিলাগড়, সিলেট',
   },
   {
@@ -457,7 +457,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Agricultural',
     portalUrl: 'https://kau.edu.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'দৌলতপুর, খুলনা',
   },
   {
@@ -467,7 +467,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Agricultural',
     portalUrl: 'https://hau.edu.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'হবিগঞ্জ সদর',
   },
   {
@@ -477,7 +477,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Agricultural',
     portalUrl: 'https://krau.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'কুড়িগ্রাম',
   },
 
@@ -489,7 +489,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Medical',
     portalUrl: 'https://dgme.teletalk.com.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'স্বাস্থ্য শিক্ষা অধিদপ্তর পরিচালিত সকল সরকারি ও বেসরকারি মেডিকেল',
   },
   {
@@ -499,7 +499,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Medical',
     portalUrl: 'https://bsmmu.edu.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'শাহবাগ, ঢাকা - পোস্ট গ্র্যাজুয়েট ও বিশেষায়িত স্বাস্থ্য কোর্স',
   },
   {
@@ -509,7 +509,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Medical',
     portalUrl: 'https://cmu.edu.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'ফৌজদারহাট, চট্টগ্রাম',
   },
   {
@@ -519,7 +519,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Medical',
     portalUrl: 'https://rmu.edu.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'রাজশাহী',
   },
   {
@@ -529,7 +529,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Medical',
     portalUrl: 'https://smu.edu.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'চৌহাট্টা, সিলেট',
   },
 
@@ -541,7 +541,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Specialized',
     portalUrl: 'https://admission.bup.edu.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'মিরপুর সেনানিবাস, ঢাকা - এফবিএস, এফএসটি, এফএএসএস ও এফএসসিএস',
   },
   {
@@ -551,7 +551,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Specialized',
     portalUrl: 'http://app1.nu.edu.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'সারাদেশের সকল অধিভুক্ত সরকারি-বেসরকারি কলেজ অনার্স ভর্তি',
   },
   {
@@ -561,7 +561,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Specialized',
     portalUrl: 'https://bou.ac.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'দূরশিক্ষণ ও উন্মুক্ত বিশ্ববিদ্যালয় প্রোগ্রাম',
   },
   {
@@ -571,7 +571,7 @@ export const DEFAULT_MONITORED_UNIVERSITIES: MonitoredUniversity[] = [
     category: 'Specialized',
     portalUrl: 'https://iau.edu.bd',
     status: 'active',
-    lastKnownSession: '2024-2025',
+    lastKnownSession: '2026-2027',
     notes: 'ফাজিল ও কামিল মাদ্রাসা শিক্ষা',
   },
 ];

@@ -64,7 +64,7 @@ export async function createAdmissionSpreadsheet(
   accessToken: string,
   data: UniversityAdmissionData
 ): Promise<SpreadsheetSyncResult> {
-  const title = `${data.universityName || 'University'} Admission Tracker ${data.academicSession || '2024-25'}`;
+  const title = `${data.universityName || 'University'} Admission Tracker ${data.academicSession || '2026-27'}`;
   const sheetTitle = 'Admission Details';
 
   // Deduplicate units before initial creation

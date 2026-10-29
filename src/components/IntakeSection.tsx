@@ -32,7 +32,7 @@ export const IntakeSection: React.FC<IntakeSectionProps> = ({
     fileSize: string;
     mimeType: string;
   } | null>(null);
-  const [activeSampleId, setActiveSampleId] = useState<string>('du-2024-25');
+  const [activeSampleId, setActiveSampleId] = useState<string>('du-2026-27');
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -196,7 +196,7 @@ export const IntakeSection: React.FC<IntakeSectionProps> = ({
               onChange={(e) => setTextInput(e.target.value)}
               placeholder={
                 lang === 'bn'
-                  ? 'যেমন: ঢাকা বিশ্ববিদ্যালয় আন্ডারগ্র্যাজুয়েট ভর্তি বিজ্ঞপ্তি ২০২৪-২৫... আবেদন শুরু ০৪ নভেম্বর, শেষ ২৫ নভেম্বর, ফি ১,০৫০ টাকা...'
+                  ? 'যেমন: ঢাকা বিশ্ববিদ্যালয় আন্ডারগ্র্যাজুয়েট ভর্তি বিজ্ঞপ্তি ২০২৬-২৭... আবেদন শুরু ১১ নভেম্বর ২০২৬, শেষ ২৫ নভেম্বর ২০২৬, ফি ১,০৫০ টাকা...'
                   : 'Paste university admission circular details here...'
               }
               className="w-full p-3.5 text-sm text-slate-800 bg-slate-50 border border-slate-200 rounded-lg focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-700/20 focus:border-emerald-700 transition-all font-mono leading-relaxed"
