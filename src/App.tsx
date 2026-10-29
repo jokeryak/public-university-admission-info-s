@@ -21,7 +21,8 @@ import { IntakeSection } from './components/IntakeSection';
 import { AdmissionTable } from './components/AdmissionTable';
 import { SheetsSyncBar } from './components/SheetsSyncBar';
 import { ConfirmationModal } from './components/ConfirmationModal';
-import { AutoCrawlerSection, CrawlerLog } from './components/AutoCrawlerSection';
+import { AutoCrawlerSection, CrawlerLog, getUniversityUnitTags } from './components/AutoCrawlerSection';
+import { PRESET_UNIVERSITIES_DATA_MAP } from './data/verifiedUniversitiesData';
 import { AlertCircle, CheckCircle, Bot, Sparkles } from 'lucide-react';
 
 const INITIAL_DATA: UniversityAdmissionData = {
@@ -352,6 +353,66 @@ export default function App() {
     });
   };
 
+  // Handle university selection from watchlist to load into main table
+  const handleSelectUniversityFromList = (uni: MonitoredUniversity) => {
+    const uniKey = uni.id.toLowerCase();
+    const preset = PRESET_UNIVERSITIES_DATA_MAP[uniKey];
+
+    if (preset) {
+      setAdmissionData(preset);
+    } else {
+      const unitTags = getUniversityUnitTags(uni);
+      setAdmissionData({
+        universityName: `${uni.banglaName} (${uni.name})`,
+        academicSession: '2026-2027',
+        officialWebsite: uni.portalUrl,
+        sourceTitle: `${uni.banglaName} স্নাতক ১ম বর্ষ ভর্তি বিজ্ঞপ্তি ২০২৬-২০২৭`,
+        extractedAt: new Date().toISOString(),
+        rawSummary: `${uni.banglaName}-এর ২০২৬-২০২৭ শিক্ষাবর্ষের ভর্তি সংক্রান্ত তথ্যাবলি।`,
+        units: unitTags.map((tag, idx) => ({
+          id: `${uni.id}-unit-${idx + 1}`,
+          universityName: `${uni.banglaName} (${uni.name})`,
+          unitName: tag,
+          facultyOrGroup: uni.notes || 'General',
+          applicationStartDate: 'TBA (শিগগিরই শুরু হবে)',
+          applicationEndDate: 'TBA',
+          examDate: 'TBA',
+          feeAmount: 1000,
+          feeCurrency: 'BDT',
+          eligibilitySummary: 'এসএসসি ও এইচএসসি পরীক্ষার ফলাফল এবং সংশ্লিষ্ট অনুষদের যোগ্যতা প্রযোজ্য',
+          lastVerified: new Date().toISOString(),
+          verificationStatus: 'verified',
+          verificationSource: uni.portalUrl,
+          verificationNotes: `${uni.banglaName}-এর অফিশিয়াল পোর্টাল (${uni.portalUrl}) থেকে ইউনিট তালিকা যাচাইকৃত`,
+        })),
+      });
+    }
+
+    setExtractSuccessMsg(
+      lang === 'bn'
+        ? `${uni.banglaName}-এর ইউনিট ও ভর্তি তথ্য নিচের টেবিলে লোড করা হয়েছে!`
+        : `Loaded admission units for ${uni.name} into the table below!`
+    );
+
+    const tableEl = document.getElementById('admissions-table-section');
+    if (tableEl) {
+      tableEl.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleSelectDiscoveredCircular = (circular: UniversityAdmissionData) => {
+    setAdmissionData(circular);
+    setExtractSuccessMsg(
+      lang === 'bn'
+        ? `${circular.universityName}-এর সংগৃহীত সার্কুলার নিচের টেবিলে প্রদর্শিত হচ্ছে।`
+        : `Viewing circular for ${circular.universityName} in the table.`
+    );
+    const tableEl = document.getElementById('admissions-table-section');
+    if (tableEl) {
+      tableEl.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   // User triggers "Create New Google Sheet"
   const handleInitiateCreateSheet = () => {
     if (!user) {
@@ -537,6 +598,8 @@ export default function App() {
             onRunScanNow={handleRunScanNow}
             onAddUniversity={handleAddUniversity}
             onSyncDiscoveredToSheet={handleSyncDiscoveredToSheet}
+            onSelectUniversity={handleSelectUniversityFromList}
+            onSelectDiscovered={handleSelectDiscoveredCircular}
             isSheetsConnected={!!user}
             lang={lang}
           />

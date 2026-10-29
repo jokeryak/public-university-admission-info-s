@@ -4,6 +4,7 @@
 
 export interface AdmissionUnit {
   id: string;
+  universityName?: string;     // University this unit belongs to (e.g. "ঢাকা বিশ্ববিদ্যালয়")
   unitName: string;            // e.g. "Ka Unit (Science)", "Unit A", "General Unit"
   facultyOrGroup: string;      // e.g. "Faculty of Science & Engineering"
   applicationStartDate: string; // e.g. "11 Nov 2026"

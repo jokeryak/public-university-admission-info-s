@@ -12,9 +12,45 @@ import {
   FileSpreadsheet,
   Calendar,
   Search,
+  Building2,
+  Eye,
 } from 'lucide-react';
 import { MonitoredUniversity } from '../data/monitoredUniversities';
 import { UniversityAdmissionData } from '../types/admission';
+
+/**
+ * Extracts and formats clean unit badges for a given university
+ */
+export const getUniversityUnitTags = (uni: MonitoredUniversity): string[] => {
+  if (uni.notes && uni.notes.trim()) {
+    const raw = uni.notes;
+    // Extract phrases separated by comma, 'ও', or newline
+    const tokens = raw
+      .replace(/ভর্তি|পরীক্ষা|অনুষদসমূহ|অনুষদ|বিভাগসমূহ/gi, '')
+      .split(/[,、।\n\r/]|(?:\s+ও\s+)/)
+      .map((t) => t.trim())
+      .filter((t) => t.length > 0 && !t.startsWith('http'));
+
+    if (tokens.length > 0) {
+      return tokens.slice(0, 5);
+    }
+  }
+
+  // Sensible default unit distributions by public university type
+  if (uni.category === 'Engineering') {
+    return ['ক গ্রুপ (প্রকৌশল)', 'খ গ্রুপ (স্থাপত্য)'];
+  }
+  if (uni.category === 'Medical') {
+    return ['MBBS (মেডিকেল)', 'BDS (ডেন্টাল)'];
+  }
+  if (uni.category === 'Agricultural') {
+    return ['কৃষি গুচ্ছ (সমন্বিত)'];
+  }
+  if (uni.category === 'Cluster') {
+    return ['A ইউনিট (বিজ্ঞান)', 'B ইউনিট (মানবিক)', 'C ইউনিট (বাণিজ্য)'];
+  }
+  return ['বিজ্ঞান শাখা', 'মানবিক / কলা', 'ব্যবসায় শিক্ষা'];
+};
 
 export interface CrawlerLog {
   id: string;
@@ -38,6 +74,8 @@ interface AutoCrawlerSectionProps {
   onRunScanNow: () => void;
   onAddUniversity: (uni: { name: string; banglaName: string; portalUrl: string; category: any }) => void;
   onSyncDiscoveredToSheet: (circular: UniversityAdmissionData) => void;
+  onSelectUniversity?: (uni: MonitoredUniversity) => void;
+  onSelectDiscovered?: (circular: UniversityAdmissionData) => void;
   isSheetsConnected: boolean;
   lang: 'bn' | 'en';
 }
@@ -54,6 +92,8 @@ export const AutoCrawlerSection: React.FC<AutoCrawlerSectionProps> = ({
   onRunScanNow,
   onAddUniversity,
   onSyncDiscoveredToSheet,
+  onSelectUniversity,
+  onSelectDiscovered,
   isSheetsConnected,
   lang,
 }) => {
@@ -229,16 +269,43 @@ export const AutoCrawlerSection: React.FC<AutoCrawlerSectionProps> = ({
                 className="p-3 bg-white rounded-lg border border-emerald-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs"
               >
                 <div>
-                  <span className="font-bold text-slate-900 block">{disc.universityName}</span>
-                  <span className="text-slate-500 text-[11px]">
-                    {disc.academicSession} শিক্ষাবর্ষ · {disc.units.length} টি ইউনিট অন্তর্ভুক্ত
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <Building2 className="w-4 h-4 text-emerald-700 shrink-0" />
+                    <span className="font-bold text-slate-900">{disc.universityName}</span>
+                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-mono">
+                      {disc.academicSession}
+                    </span>
+                  </div>
+                  {/* Alongside display: List of units in this circular */}
+                  <div className="flex flex-wrap items-center gap-1.5 mt-1.5">
+                    <span className="text-slate-500 text-[11px] font-medium mr-0.5">
+                      {lang === 'bn' ? 'ইউনিটসমূহ:' : 'Units:'}
+                    </span>
+                    {disc.units.map((u, uIdx) => (
+                      <span
+                        key={uIdx}
+                        className="inline-flex items-center px-1.5 py-0.5 bg-slate-100 text-slate-800 rounded text-[10px] font-medium border border-slate-200"
+                      >
+                        {u.unitName}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
                 <div className="flex items-center gap-2 shrink-0">
+                  {onSelectDiscovered && (
+                    <button
+                      onClick={() => onSelectDiscovered(disc)}
+                      className="flex items-center gap-1 px-2.5 py-1.5 bg-slate-800 hover:bg-slate-900 text-white rounded font-medium text-xs shadow-2xs transition-colors"
+                      title={lang === 'bn' ? 'এই বিশ্ববিদ্যালয়ের ইউনিটগুলো নিচের মূল টেবিলে দেখুন' : 'View in main table'}
+                    >
+                      <Eye className="w-3.5 h-3.5" />
+                      <span>{lang === 'bn' ? 'টেবিলে দেখুন' : 'View in Table'}</span>
+                    </button>
+                  )}
                   <button
                     onClick={() => onSyncDiscoveredToSheet(disc)}
-                    className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded font-medium text-xs shadow-2xs"
+                    className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded font-medium text-xs shadow-2xs transition-colors"
                   >
                     <FileSpreadsheet className="w-3.5 h-3.5" />
                     <span>{lang === 'bn' ? 'গুগল শিটে লিখুন' : 'Write to Sheet'}</span>
@@ -309,51 +376,80 @@ export const AutoCrawlerSection: React.FC<AutoCrawlerSectionProps> = ({
             <thead className="sticky top-0 z-10 bg-slate-100">
               <tr className="border-b border-slate-200 text-slate-600 font-semibold uppercase tracking-wider">
                 <th className="py-2.5 px-3.5">{lang === 'bn' ? 'বিশ্ববিদ্যালয়' : 'University'}</th>
+                <th className="py-2.5 px-3">{lang === 'bn' ? 'ভর্তি ইউনিটসমূহ (Units)' : 'Admission Units'}</th>
                 <th className="py-2.5 px-3">{lang === 'bn' ? 'ক্যাটাগরি' : 'Category'}</th>
                 <th className="py-2.5 px-3">{lang === 'bn' ? 'অফিশিয়াল পোর্টাল URL' : 'Official Portal URL'}</th>
                 <th className="py-2.5 px-3">{lang === 'bn' ? 'স্ট্যাটাস' : 'Status'}</th>
-                <th className="py-2.5 px-3 text-right">{lang === 'bn' ? 'লিংক' : 'Visit'}</th>
+                <th className="py-2.5 px-3 text-right">{lang === 'bn' ? 'অ্যাকশন' : 'Action'}</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 text-slate-800">
-              {filteredUniversities.map((uni) => (
-                <tr key={uni.id} className="hover:bg-slate-50 transition-colors">
-                  <td className="py-2.5 px-3.5">
-                    <span className="font-semibold text-slate-900 block">{uni.banglaName}</span>
-                    <span className="text-[11px] text-slate-500 block">{uni.name}</span>
-                  </td>
-                  <td className="py-2.5 px-3">
-                    <span className="text-slate-600 font-medium text-[11px]">{uni.category}</span>
-                  </td>
-                  <td className="py-2.5 px-3 font-mono text-[11px] text-slate-600 max-w-xs truncate">
-                    {uni.portalUrl}
-                  </td>
-                  <td className="py-2.5 px-3">
-                    <div className="flex items-center gap-1.5">
-                      <span className={`w-2 h-2 rounded-full ${uni.status === 'updated' ? 'bg-emerald-500' : 'bg-slate-400'}`}></span>
-                      <span className="text-[11px] text-slate-700">
-                        {uni.status === 'updated'
-                          ? lang === 'bn' ? 'আপডেট প্রাপ্ত' : 'Updated'
-                          : lang === 'bn' ? 'নিয়মিত পর্যবেক্ষণে' : 'Monitored'}
-                      </span>
-                    </div>
-                  </td>
-                  <td className="py-2.5 px-3 text-right">
-                    <a
-                      href={uni.portalUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="p-1 text-slate-400 hover:text-emerald-700 inline-flex items-center justify-center rounded"
-                      title="Visit official portal"
-                    >
-                      <ExternalLink className="w-3.5 h-3.5" />
-                    </a>
-                  </td>
-                </tr>
-              ))}
+              {filteredUniversities.map((uni) => {
+                const unitTags = getUniversityUnitTags(uni);
+                return (
+                  <tr key={uni.id} className="hover:bg-slate-50 transition-colors">
+                    <td className="py-2.5 px-3.5">
+                      <span className="font-semibold text-slate-900 block">{uni.banglaName}</span>
+                      <span className="text-[11px] text-slate-500 block">{uni.name}</span>
+                    </td>
+                    <td className="py-2.5 px-3 max-w-[220px]">
+                      <div className="flex flex-wrap gap-1">
+                        {unitTags.map((tag, tIdx) => (
+                          <span
+                            key={tIdx}
+                            className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-emerald-50 text-emerald-900 border border-emerald-200"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </td>
+                    <td className="py-2.5 px-3">
+                      <span className="text-slate-600 font-medium text-[11px]">{uni.category}</span>
+                    </td>
+                    <td className="py-2.5 px-3 font-mono text-[11px] text-slate-600 max-w-xs truncate">
+                      {uni.portalUrl}
+                    </td>
+                    <td className="py-2.5 px-3">
+                      <div className="flex items-center gap-1.5">
+                        <span className={`w-2 h-2 rounded-full ${uni.status === 'updated' ? 'bg-emerald-500' : 'bg-slate-400'}`}></span>
+                        <span className="text-[11px] text-slate-700">
+                          {uni.status === 'updated'
+                            ? lang === 'bn' ? 'আপডেট প্রাপ্ত' : 'Updated'
+                            : lang === 'bn' ? 'নিয়মিত পর্যবেক্ষণে' : 'Monitored'}
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-2.5 px-3 text-right">
+                      <div className="flex items-center justify-end gap-1.5">
+                        {onSelectUniversity && (
+                          <button
+                            type="button"
+                            onClick={() => onSelectUniversity(uni)}
+                            className="inline-flex items-center gap-1 px-2.5 py-1 text-[11px] font-semibold text-emerald-800 hover:text-emerald-950 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded transition-all"
+                            title={lang === 'bn' ? 'এই বিশ্ববিদ্যালয়ের ইউনিটগুলো নিচের টেবিলে দেখুন' : 'View units in main table'}
+                          >
+                            <Building2 className="w-3 h-3 text-emerald-700" />
+                            <span>{lang === 'bn' ? 'ইউনিট দেখুন' : 'View Units'}</span>
+                          </button>
+                        )}
+                        <a
+                          href={uni.portalUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="p-1 text-slate-400 hover:text-emerald-700 inline-flex items-center justify-center rounded"
+                          title="Visit official portal"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                );
+              })}
               {filteredUniversities.length === 0 && (
                 <tr>
-                  <td colSpan={5} className="py-8 text-center text-slate-500">
+                  <td colSpan={6} className="py-8 text-center text-slate-500">
                     {lang === 'bn' ? 'কোনো বিশ্ববিদ্যালয় খুঁজে পাওয়া যায়নি।' : 'No universities matched your search.'}
                   </td>
                 </tr>
